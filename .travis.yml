@@ -1,0 +1,32 @@
+language: java
+notifications:
+  email: false
+jobs:
+  include:
+    - os: linux
+      jdk: openjdk8
+    - os: linux
+      jdk: openjdk11
+    - os: linux
+      jdk: openjdk13
+    - os: linux
+      jdk: openjdk14
+    - os: linux
+      jdk: openjdk16
+    - os: osx
+      jdk: openjdk11
+    - os: osx
+      jdk: openjdk13
+    - os: osx
+      jdk: openjdk14
+    - os: osx
+      jdk: openjdk16
+install: true
+script: 
+  - mvn clean install
+cache:
+  directories:
+  - $HOME/.m2
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+  - mvn clean test jacoco:report coveralls:report

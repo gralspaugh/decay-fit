@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+		<groupId>org.scijava</groupId>
+		<artifactId>pom-scijava</artifactId>
+		<version>30.0.0</version>
+		<relativePath />
+	</parent>
+
+  <groupId>lamb.decaysuite.decayfit</groupId>
+  <artifactId>decayfit</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+  <name>decayfit</name>
+  <description>A package for fitting decay transients</description>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+  <inceptionYear>2021</inceptionYear>
+  <organization>
+		<name>Laboratory of Advanced Microscopy and Biophotonics</name>
+		<url>https://github.com/Lab-of-Advanced-Microscopy-Biophotonics</url>
+	</organization>
+	<licenses>
+		<license>
+			<name>GNU General Public License v3+</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+  <developers>
+		<developer>
+			<id>alspaughgr</id>
+			<name>Gregory Alspaugh</name>
+			<roles>
+				<role>lead</role>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Gregory Alspaugh</name>
+			<properties><id>gralspaugh</id></properties>
+		</contributor>
+	</contributors>
+
+  <mailingLists>
+		<mailingList>
+			<name>Image.sc Forum</name>
+			<archive>https://forum.image.sc</archive>
+		</mailingList>
+	</mailingLists>
+
+  <scm>
+		<connection>
+      scm:git:git://github.com/Lab-of-Advanced-Microscopy-Biophotonics/decay-suite/decay-fit
+    </connection>
+		<developerConnection>
+      scm:git:git@github.com:Lab-of-Advanced-Microscopy-Biophotonics/decay-suite/decay-fit
+    </developerConnection>
+		<url>
+      https://github.com/Lab-of-Advanced-Microscopy-Biophotonics/decay-suite/decay-fit
+    </url>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>
+      https://github.com/Lab-of-Advanced-Microscopy-Biophotonics/decay-suite/decay-fit/issues
+    </url>
+	</issueManagement>
+	<ciManagement>
+		<system>Travis CI</system>
+		<url>
+      https://travis-ci.com/Lab-of-Advanced-Microscopy-Biophotonics/decay-suite/decay-fit
+    </url>
+	</ciManagement>
+
+  <properties>
+    <package-name>decayfit</package-name>
+    <license.licenseName>gpl_v3</license.licenseName>
+    <license.projectName>
+      decayfit package for fitting fluorescent or phosphorescent transient decays
+    </license.projectName>
+    <license.copyrightOwners>
+      National Institutes of Health's National Heart, Lung, and Blood Institue's Laboratory of Advanced Microscopy and Biophotonics
+    </license.copyrightOwners>
+  </properties>
+
+  <repositories>
+		<repository>
+			<id>scijava.public</id>
+			<url>https://maven.scijava.org/content/groups/public</url>
+		</repository>
+	</repositories>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math3</artifactId>
+      <version>3.6.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+    
+  </dependencies>
+  <build>
+	  <pluginManagement>
+		<plugins>
+			<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+			<plugin>
+			  <artifactId>maven-clean-plugin</artifactId>
+			  <version>3.1.0</version>
+			</plugin>
+			<!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+			<plugin>
+			  <artifactId>maven-resources-plugin</artifactId>
+			  <version>3.0.2</version>
+			</plugin>
+			<plugin>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.8.0</version>
+			</plugin>
+			<plugin>
+			  <artifactId>maven-surefire-plugin</artifactId>
+			  <version>2.22.1</version>
+			</plugin>
+			<plugin>
+			  <artifactId>maven-jar-plugin</artifactId>
+			  <version>3.0.2</version>
+			</plugin>
+			<plugin>
+			  <artifactId>maven-install-plugin</artifactId>
+			  <version>2.5.2</version>
+			</plugin>
+			<plugin>
+			  <artifactId>maven-deploy-plugin</artifactId>
+			  <version>2.8.2</version>
+			</plugin>
+			<!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->
+			<plugin>
+			  <artifactId>maven-site-plugin</artifactId>
+			  <version>3.7.1</version>
+			</plugin>
+			<plugin>
+			  <artifactId>maven-project-info-reports-plugin</artifactId>
+			  <version>3.0.0</version>
+			</plugin>
+		  </plugins>
+	  </pluginManagement>
+	  <plugins>
+		<plugin>
+			<groupId>org.eluder.coveralls</groupId>
+			<artifactId>coveralls-maven-plugin</artifactId>
+			<version>4.3.0</version>
+			<configuration>
+				<timestampFormat>EpochMillis</timestampFormat>
+        <repoToken>repo_token</repoToken>
+      </configuration>
+		</plugin>
+			
+		<plugin>
+			<groupId>org.jacoco</groupId>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.7</version>
+			<executions>
+				<execution>
+					<id>prepare-agent</id>
+					<goals>
+						<goal>prepare-agent</goal>
+					</goals>
+				</execution>
+				<execution>
+					<id>report</id>
+					<phase>test</phase>
+					<goals>
+						<goal>report</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		
+	</plugins>
+  </build>
+  
+
+  
+</project>
