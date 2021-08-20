@@ -29,4 +29,4 @@ cache:
   - $HOME/.m2
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - mvn clean test-DrepoToken=repo_token jacoco:report coveralls:report
+  - mvn clean test jacoco:report coveralls:report
